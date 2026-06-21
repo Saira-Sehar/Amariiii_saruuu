@@ -1,0 +1,1156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Saruu 💙💖</title>
+    <style>
+        :root {
+            --navy-deep: #040a1a;
+            --white: #ffffff;
+            --text-light: #e8e4f0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'Poppins', 'Quicksand', sans-serif;
+            background: #040a1a;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* ============ DIAGONAL BACKGROUND ============ */
+        .diagonal-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+        .diagonal-layer {
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            animation: diagonalShift var(--dd-dur) ease-in-out infinite;
+        }
+        .diagonal-layer-1 {
+            background: linear-gradient(135deg,
+                    transparent 20%,
+                    rgba(10, 20, 50, 0.9) 30%,
+                    rgba(15, 30, 65, 0.8) 45%,
+                    rgba(8, 15, 40, 0.9) 60%,
+                    transparent 75%);
+            --dd-dur: 20s;
+        }
+        .diagonal-layer-2 {
+            background: linear-gradient(225deg,
+                    transparent 15%,
+                    rgba(20, 35, 75, 0.7) 35%,
+                    rgba(12, 22, 55, 0.8) 50%,
+                    rgba(25, 40, 80, 0.6) 65%,
+                    transparent 80%);
+            --dd-dur: 25s;
+        }
+        .diagonal-layer-3 {
+            background: linear-gradient(315deg,
+                    transparent 25%,
+                    rgba(18, 28, 60, 0.7) 40%,
+                    rgba(10, 18, 45, 0.8) 55%,
+                    rgba(22, 38, 70, 0.6) 70%,
+                    transparent 85%);
+            --dd-dur: 30s;
+        }
+        @keyframes diagonalShift {
+            0%,
+            100% {
+                transform: translate(0, 0);
+            }
+            50% {
+                transform: translate(3%, 2%);
+            }
+        }
+
+        /* ============ GLITTER SPOTS ============ */
+        .glitter-spot {
+            position: fixed;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 0;
+            animation: glitterShine var(--gs-dur) ease-in-out infinite;
+            background: radial-gradient(circle,
+                    rgba(255, 255, 255, 0.15) 0%,
+                    rgba(255, 200, 220, 0.08) 30%,
+                    transparent 70%);
+        }
+        @keyframes glitterShine {
+            0%,
+            100% {
+                opacity: 0.3;
+                transform: scale(1);
+            }
+            50% {
+                opacity: 0.7;
+                transform: scale(1.3);
+            }
+        }
+
+        /* ============ STARS ============ */
+        .stars-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+        .star-dot {
+            position: absolute;
+            background: white;
+            border-radius: 50%;
+            animation: twinkle var(--tw-dur) infinite;
+            animation-delay: var(--tw-delay);
+            box-shadow: 0 0 var(--glow) rgba(255, 200, 220, 0.8);
+        }
+        @keyframes twinkle {
+            0%,
+            100% {
+                opacity: 0.2;
+                transform: scale(1);
+            }
+            50% {
+                opacity: 0.9;
+                transform: scale(2.5);
+            }
+        }
+
+        /* ============ BUBBLES ============ */
+        .bubbles-layer {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 2;
+        }
+        .bubble {
+            position: absolute;
+            border-radius: 50%;
+            animation: bubbleGentle var(--bu-dur) ease-in-out infinite;
+            animation-delay: var(--bu-delay);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            background: var(--bu-color);
+            box-shadow: inset -2px -2px 4px rgba(0, 0, 0, 0.1),
+                inset 2px 2px 4px rgba(255, 255, 255, 0.15);
+        }
+        @keyframes bubbleGentle {
+            0%,
+            100% {
+                transform: translate(var(--bu-x), var(--bu-y)) scale(1);
+                opacity: 0.35;
+            }
+            33% {
+                transform: translate(calc(var(--bu-x) + var(--bu-d1)), calc(var(--bu-y) + var(--bu-d1y))) scale(1.1);
+                opacity: 0.5;
+            }
+            66% {
+                transform: translate(calc(var(--bu-x) + var(--bu-d2)), calc(var(--bu-y) + var(--bu-d2y))) scale(0.9);
+                opacity: 0.25;
+            }
+        }
+
+        /* ============ SPARKLES ============ */
+        .sparkles-layer {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 2;
+        }
+        .sparkle-particle {
+            position: absolute;
+            animation: sparkleGentle var(--s-dur) ease-in-out infinite;
+            animation-delay: var(--s-delay);
+            font-size: var(--s-size);
+            opacity: var(--s-opacity);
+        }
+        @keyframes sparkleGentle {
+            0%,
+            100% {
+                transform: translate(var(--s-x), var(--s-y)) scale(1);
+                opacity: var(--s-opacity);
+            }
+            50% {
+                transform: translate(calc(var(--s-x) + var(--s-drift)), calc(var(--s-y) + var(--s-drifty))) scale(1.5);
+                opacity: calc(var(--s-opacity) + 0.35);
+            }
+        }
+
+        /* ============ FLOWERS ============ */
+        .flower {
+            position: absolute;
+            animation: flowerGentle var(--f-dur) ease-in-out infinite;
+            animation-delay: var(--f-delay);
+            font-size: var(--f-size);
+            opacity: 0.4;
+            pointer-events: none;
+            z-index: 2;
+        }
+        @keyframes flowerGentle {
+            0%,
+            100% {
+                transform: translate(var(--f-x), var(--f-y)) rotate(0deg);
+                opacity: 0.35;
+            }
+            50% {
+                transform: translate(calc(var(--f-x) + var(--f-drift)), calc(var(--f-y) + var(--f-drifty))) rotate(12deg);
+                opacity: 0.25;
+            }
+        }
+
+        /* ============ MAIN WRAPPER ============ */
+        .main-wrapper {
+            position: relative;
+            z-index: 10;
+            width: 100%;
+            max-width: 950px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* ============ UNMUTE BUTTON ============ */
+        .unmute-top-right {
+            position: fixed;
+            top: 16px;
+            right: 16px;
+            z-index: 100;
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            background: rgba(232, 93, 117, 0.8);
+            border: 2px solid rgba(255, 255, 255, 0.4);
+            color: white;
+            font-size: 1.1rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 22px rgba(232, 93, 117, 0.4);
+            backdrop-filter: blur(10px);
+            animation: unmutePulse 2.5s ease infinite;
+        }
+        .unmute-top-right:hover {
+            background: rgba(232, 93, 117, 1);
+            transform: scale(1.1);
+            box-shadow: 0 8px 30px rgba(232, 93, 117, 0.6);
+        }
+        .unmute-top-right.muted {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(255, 255, 255, 0.3);
+            animation: unmutePulse 1.2s ease infinite;
+        }
+        @keyframes unmutePulse {
+            0%,
+            100% {
+                box-shadow: 0 6px 22px rgba(232, 93, 117, 0.4);
+            }
+            50% {
+                box-shadow: 0 6px 38px rgba(232, 93, 117, 0.7), 0 0 45px rgba(255, 107, 138, 0.3);
+            }
+        }
+
+        /* ============ SCENE ============ */
+        .scene {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            width: 100%;
+            animation: fadeSlideIn 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .scene.active {
+            display: flex;
+        }
+        @keyframes fadeSlideIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px) scale(0.96);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        /* ============ GLASS CARDS ============ */
+        .glass-card {
+            backdrop-filter: blur(22px);
+            -webkit-backdrop-filter: blur(22px);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 24px;
+            padding: 35px 32px;
+            width: 550px;
+            max-width: 95vw;
+            box-shadow: 0 20px 55px rgba(0, 0, 0, 0.5),
+                0 0 0 1px rgba(255, 255, 255, 0.04) inset;
+            position: relative;
+            overflow: visible;
+            transition: background 0.5s ease;
+            margin: 10px auto;
+        }
+        .glass-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at 30% 25%,
+                    rgba(255, 255, 255, 0.03) 0%,
+                    rgba(255, 107, 138, 0.05) 40%,
+                    transparent 65%);
+            pointer-events: none;
+        }
+
+        /* Card colors + wider cards */
+        #scene1 .glass-card {
+            background: rgba(22, 40, 92, 0.5);
+            width: 680px;
+            padding: 35px 32px;
+        }
+        #scene2 .glass-card {
+            background: rgba(30, 25, 55, 0.5);
+        }
+        #scene3 .glass-card {
+            background: rgba(20, 35, 80, 0.5);
+        }
+        #scene4 .glass-card {
+            background: rgba(25, 30, 70, 0.5);
+        }
+        #scene5 .glass-card {
+            background: rgba(28, 38, 88, 0.5);
+        }
+        #scene6 .glass-card {
+            background: rgba(18, 28, 65, 0.55);
+            width: 620px;
+            padding: 35px 34px;
+        }
+        #scene7 .glass-card {
+            background: rgba(22, 40, 92, 0.45);
+            width: 700px;
+            padding: 35px 32px;
+        }
+        #scene8 .glass-card {
+            background: rgba(15, 22, 55, 0.55);
+        }
+        #scene9 .glass-card {
+            background: rgba(25, 35, 75, 0.5);
+            width: 620px;
+            padding: 35px 34px;
+        }
+
+        /* ============ SCREEN 1 ROW ============ */
+        .screen1-row {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 28px;
+            width: 100%;
+            position: relative;
+            z-index: 1;
+        }
+        .screen1-left {
+            flex: 1;
+            text-align: left;
+        }
+        .screen1-right {
+            flex: 0 0 auto;
+        }
+        .screen1-right .cake-gif {
+            width: 160px;
+            border-radius: 18px;
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5),
+                0 0 35px rgba(255, 107, 138, 0.25);
+        }
+        .screen1-buttons {
+            display: flex;
+            gap: 12px;
+            margin-top: 18px;
+            flex-wrap: wrap;
+        }
+
+        /* ============ TYPOGRAPHY - LARGER FOR DESKTOP ============ */
+        .title {
+            font-size: 1.9rem;
+            font-weight: 700;
+            color: var(--white);
+            text-shadow: 0 0 20px rgba(255, 107, 138, 0.35);
+            margin-bottom: 12px;
+            line-height: 1.3;
+            position: relative;
+            z-index: 1;
+        }
+        .subtitle {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            margin-bottom: 8px;
+            line-height: 1.6;
+            position: relative;
+            z-index: 1;
+        }
+        .highlight {
+            background: linear-gradient(135deg, #ff6b8a, #f0c27a);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 700;
+            filter: drop-shadow(0 0 6px rgba(255, 107, 138, 0.35));
+        }
+
+        /* ============ BUTTONS ============ */
+        .btn {
+            background: rgba(22, 40, 92, 0.5);
+            border: 1.5px solid rgba(255, 255, 255, 0.2);
+            padding: 13px 32px;
+            margin: 6px 6px;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            color: var(--white);
+            letter-spacing: 0.5px;
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(5px);
+            user-select: none;
+            -webkit-tap-highlight-color: transparent;
+            z-index: 1;
+        }
+        .btn:hover {
+            background: rgba(30, 53, 112, 0.7);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 28px rgba(0, 0, 0, 0.35),
+                0 0 18px rgba(255, 107, 138, 0.18);
+            border-color: rgba(255, 255, 255, 0.4);
+        }
+        .btn:active {
+            transform: scale(0.94);
+        }
+        .btn-yes {
+            background: rgba(232, 93, 117, 0.55);
+            border-color: rgba(255, 143, 163, 0.5);
+            color: white;
+            font-weight: 700;
+            box-shadow: 0 7px 22px rgba(232, 93, 117, 0.3);
+        }
+        .btn-yes:hover {
+            background: rgba(232, 93, 117, 0.8);
+            box-shadow: 0 10px 30px rgba(232, 93, 117, 0.5),
+                0 0 28px rgba(255, 107, 138, 0.22);
+            border-color: rgba(255, 255, 255, 0.5);
+        }
+        .btn-no {
+            background: rgba(22, 40, 92, 0.3);
+            border-color: rgba(255, 255, 255, 0.1);
+            transition: all 0.08s ease;
+        }
+
+        /* ============ VIDEO GRID ============ */
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            width: 100%;
+            margin: 18px 0;
+            position: relative;
+            z-index: 1;
+        }
+        .video-block {
+            aspect-ratio: 1 / 1;
+            border-radius: 12px;
+            overflow: hidden;
+            cursor: pointer;
+            background: #000;
+            border: 2px solid rgba(255, 255, 255, 0.16);
+            transition: all 0.3s ease;
+            position: relative;
+            box-shadow: 0 7px 18px rgba(0, 0, 0, 0.4);
+        }
+        .video-block:hover {
+            border-color: #ff6b8a;
+            box-shadow: 0 10px 30px rgba(255, 107, 138, 0.4);
+            transform: translateY(-4px) scale(1.03);
+            z-index: 5;
+        }
+        .video-block video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            pointer-events: none;
+        }
+        .video-block .play-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0, 0, 0, 0.2);
+        }
+        .video-block .play-circle {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: rgba(255, 107, 138, 0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: white;
+            box-shadow: 0 4px 18px rgba(255, 107, 138, 0.5);
+        }
+        .video-block:hover .play-circle {
+            background: rgba(255, 107, 138, 1);
+            transform: scale(1.15);
+        }
+
+        /* ============ LETTER ============ */
+        .letter-envelope {
+            cursor: pointer;
+            font-size: 5rem;
+            animation: envelopeFloat 3s ease-in-out infinite;
+            filter: drop-shadow(0 10px 22px rgba(255, 107, 138, 0.4));
+            z-index: 1;
+            transition: transform 0.3s;
+        }
+        .letter-envelope:hover {
+            transform: scale(1.08);
+        }
+        @keyframes envelopeFloat {
+            0%,
+            100% {
+                transform: translateY(0) rotate(-2deg);
+            }
+            50% {
+                transform: translateY(-18px) rotate(2deg);
+            }
+        }
+        .letter-hint {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 1rem;
+            margin-top: 8px;
+            transition: opacity 0.5s ease;
+            z-index: 1;
+            position: relative;
+        }
+        .letter-hint.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+        .letter-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 1s cubic-bezier(0.4, 0, 0.2, 1),
+                padding 1s ease,
+                opacity 0.6s ease;
+            opacity: 0;
+            background: rgba(22, 40, 92, 0.3);
+            border-radius: 14px;
+            margin-top: 14px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            z-index: 1;
+            position: relative;
+        }
+        .letter-content.open {
+            max-height: 3000px;
+            opacity: 1;
+            padding: 28px 24px;
+            border-color: rgba(255, 107, 138, 0.3);
+        }
+        .letter-text {
+            color: var(--text-light);
+            font-size: 1.05rem;
+            line-height: 2;
+            text-align: left;
+        }
+        .message-pre {
+            color: #ffffff;
+            font-weight: 600;
+            font-size: 1rem;
+            line-height: 2.1;
+            text-align: left;
+            white-space: pre-wrap;
+            word-break: break-word;
+            font-family: 'Segoe UI', 'Poppins', 'Quicksand', sans-serif;
+            margin: 0;
+        }
+        .poetry-pre {
+            font-weight: 500;
+            color: #ffffff;
+            font-size: 1.1rem;
+            line-height: 2.6;
+            text-align: center;
+            white-space: pre-wrap;
+            word-break: break-word;
+            font-family: 'Segoe UI', 'Poppins', 'Quicksand', sans-serif;
+            margin: 0;
+        }
+
+        /* ============ PASSWORD ============ */
+        .password-input {
+            background: rgba(22, 40, 92, 0.4);
+            border: 2px solid rgba(255, 255, 255, 0.22);
+            border-radius: 50px;
+            padding: 14px 26px;
+            font-size: 1.1rem;
+            color: white;
+            text-align: center;
+            width: 100%;
+            max-width: 300px;
+            outline: none;
+            transition: all 0.4s;
+            letter-spacing: 4px;
+            z-index: 1;
+            position: relative;
+        }
+        .password-input:focus {
+            border-color: #ff6b8a;
+            box-shadow: 0 0 28px rgba(255, 107, 138, 0.3);
+        }
+        .password-input.shake {
+            animation: shakeInput 0.5s ease;
+            border-color: #e85d75 !important;
+        }
+        @keyframes shakeInput {
+            0%,
+            100% {
+                transform: translateX(0);
+            }
+            25% {
+                transform: translateX(-10px);
+            }
+            50% {
+                transform: translateX(10px);
+            }
+            75% {
+                transform: translateX(-8px);
+            }
+        }
+        .hint-text {
+            color: rgba(255, 255, 255, 0.55);
+            font-size: 0.9rem;
+            margin-top: 8px;
+            font-style: italic;
+            z-index: 1;
+            position: relative;
+        }
+
+        /* ============ MODAL ============ */
+        .video-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.93);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .video-modal.active {
+            display: flex;
+        }
+        .video-modal video {
+            max-width: 95%;
+            max-height: 85vh;
+            border-radius: 14px;
+            box-shadow: 0 20px 70px rgba(0, 0, 0, 0.8);
+        }
+        .close-modal {
+            position: absolute;
+            top: 20px;
+            right: 28px;
+            font-size: 2.5rem;
+            color: white;
+            cursor: pointer;
+            z-index: 1001;
+            transition: 0.3s;
+        }
+        .close-modal:hover {
+            color: #ff6b8a;
+            transform: scale(1.2) rotate(90deg);
+        }
+
+        /* ============ SCREEN 9 ============ */
+        .final-bg-image {
+            width: 100%;
+            max-width: 300px;
+            border-radius: 18px;
+            margin: 15px auto;
+            box-shadow: 0 14px 45px rgba(0, 0, 0, 0.6),
+                0 0 30px rgba(255, 107, 138, 0.22);
+            border: 2px solid rgba(255, 255, 255, 0.18);
+            z-index: 1;
+            position: relative;
+            display: block;
+        }
+
+        /* ============ FUNNY POPUP ============ */
+        .funny-popup {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, #e85d75, #ff6b8a);
+            color: white;
+            padding: 12px 28px;
+            border-radius: 50px;
+            font-weight: 700;
+            z-index: 200;
+            animation: popIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+                popOut 0.4s ease 2s forwards;
+            white-space: nowrap;
+            font-size: 0.95rem;
+            box-shadow: 0 10px 30px rgba(232, 93, 117, 0.5);
+        }
+        @keyframes popIn {
+            from {
+                opacity: 0;
+                transform: translateX(-50%) translateY(-30px) scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(-50%) translateY(0) scale(1);
+            }
+        }
+        @keyframes popOut {
+            from {
+                opacity: 1;
+            }
+            to {
+                opacity: 0;
+                transform: translateX(-50%) translateY(-18px) scale(0.9);
+            }
+        }
+
+        /* ============ RESPONSIVE - LAPTOP (1366px+) ============ */
+        @media (min-width: 1366px) {
+            #scene1 .glass-card {
+                width: 750px;
+                padding: 40px 36px;
+            }
+            #scene6 .glass-card,
+            #scene9 .glass-card {
+                width: 680px;
+                padding: 40px 38px;
+            }
+            #scene7 .glass-card {
+                width: 780px;
+                padding: 40px 36px;
+            }
+            .title {
+                font-size: 2.1rem;
+            }
+            .subtitle {
+                font-size: 1.2rem;
+            }
+            .message-pre {
+                font-size: 1.1rem;
+                line-height: 2.2;
+            }
+            .poetry-pre {
+                font-size: 1.2rem;
+                line-height: 2.8;
+            }
+            .letter-text {
+                font-size: 1.1rem;
+            }
+            .screen1-right .cake-gif {
+                width: 180px;
+            }
+        }
+
+        /* ============ RESPONSIVE - TABLET ============ */
+        @media (max-width: 900px) {
+            .glass-card {
+                width: 90vw !important;
+                padding: 28px 22px;
+            }
+            .title {
+                font-size: 1.6rem;
+            }
+            .subtitle {
+                font-size: 1rem;
+            }
+            .message-pre {
+                font-size: 0.9rem;
+                line-height: 1.9;
+            }
+            .poetry-pre {
+                font-size: 0.95rem;
+                line-height: 2.3;
+            }
+            .letter-text {
+                font-size: 0.95rem;
+            }
+            .screen1-right .cake-gif {
+                width: 130px;
+            }
+        }
+
+        /* ============ RESPONSIVE - MOBILE ============ */
+        @media (max-width: 768px) {
+            .glass-card {
+                width: 94vw !important;
+                padding: 24px 16px;
+                border-radius: 20px;
+            }
+            .screen1-row {
+                flex-direction: column-reverse;
+                text-align: center;
+            }
+            .screen1-left {
+                text-align: center;
+            }
+            .screen1-right .cake-gif {
+                width: 110px;
+            }
+            .screen1-buttons {
+                justify-content: center;
+            }
+            .video-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 8px;
+            }
+            .btn {
+                padding: 10px 22px;
+                font-size: 0.9rem;
+            }
+            .title {
+                font-size: 1.4rem;
+            }
+            .subtitle {
+                font-size: 0.9rem;
+            }
+            .message-pre {
+                font-size: 0.85rem;
+                line-height: 1.8;
+            }
+            .poetry-pre {
+                font-size: 0.88rem;
+                line-height: 2.1;
+            }
+            .letter-text {
+                font-size: 0.88rem;
+            }
+            .letter-envelope {
+                font-size: 4rem;
+            }
+            .letter-content.open {
+                padding: 20px 16px;
+            }
+        }
+
+        /* ============ RESPONSIVE - SMALL MOBILE ============ */
+        @media (max-width: 480px) {
+            .glass-card {
+                width: 97vw !important;
+                padding: 18px 12px;
+                border-radius: 16px;
+            }
+            .video-grid {
+                gap: 6px;
+            }
+            .title {
+                font-size: 1.25rem;
+            }
+            .subtitle {
+                font-size: 0.85rem;
+            }
+            .btn {
+                padding: 9px 16px;
+                font-size: 0.82rem;
+                margin: 4px 3px;
+            }
+            .unmute-top-right {
+                width: 36px;
+                height: 36px;
+                top: 10px;
+                right: 10px;
+                font-size: 0.95rem;
+            }
+            .screen1-right .cake-gif {
+                width: 90px;
+            }
+            .message-pre {
+                font-size: 0.78rem;
+                line-height: 1.7;
+            }
+            .poetry-pre {
+                font-size: 0.8rem;
+                line-height: 1.9;
+            }
+            .letter-text {
+                font-size: 0.82rem;
+            }
+            .letter-envelope {
+                font-size: 3.2rem;
+            }
+            .letter-content.open {
+                padding: 16px 10px;
+            }
+            .final-bg-image {
+                max-width: 220px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- BACKGROUNDS -->
+    <div class="diagonal-bg">
+        <div class="diagonal-layer diagonal-layer-1"></div>
+        <div class="diagonal-layer diagonal-layer-2"></div>
+        <div class="diagonal-layer diagonal-layer-3"></div>
+    </div>
+    <div id="glitterContainer"></div>
+    <div class="stars-container" id="starsContainer"></div>
+    <div class="bubbles-layer" id="bubblesLayer"></div>
+    <div class="sparkles-layer" id="sparklesLayer"></div>
+
+    <!-- UNMUTE -->
+    <button class="unmute-top-right muted" id="unmuteBtn" onclick="toggleUnmute()" title="Unmute">🔇</button>
+
+    <!-- MAIN -->
+    <div class="main-wrapper">
+
+        <!-- SCREEN 1 -->
+        <section class="scene active" id="scene1">
+            <div class="glass-card">
+                <div class="screen1-row">
+                    <div class="screen1-left">
+                        <h1 class="title">🎂 Happy Birthday <span class="highlight"> MR Saruu</span>! </h1>
+                        <p class="subtitle">Wishing you a day filled with love joy and beautiful memories that last forever... 💖</p>
+                        <p class="subtitle" style="font-weight:600; color:#ff6b8a;">Are you ready for this little surprise? 🎁</p>
+                        <div class="screen1-buttons">
+                            <button class="btn btn-yes" onclick="goToScene(3)">Yes! 💕</button>
+                            <button class="btn btn-no" onclick="goToScene(2)">No 😅</button>
+                        </div>
+                    </div>
+                    <div class="screen1-right">
+                        <img src="https://i.pinimg.com/originals/68/7a/97/687a97e9f0e820fc28d3414395ecd6ac.gif" alt="Cake" class="cake-gif">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SCREEN 2 -->
+        <section class="scene" id="scene2">
+            <div class="glass-card">
+                <h1 class="title">Please think again!!! 🥺</h1>
+                <p class="subtitle">plz plz plz nawwwwwwh</p>
+                <img src="https://media.tenor.com/F4beteoaDrsAAAAe/please-cute.png" alt="please" style="width:180px; border-radius:18px; margin:18px 0; box-shadow:0 8px 28px rgba(0,0,0,0.5); position:relative; z-index:1;">
+                <br>
+                <button class="btn btn-yes" onclick="goToScene(1)">Go Back 🔙</button>
+            </div>
+        </section>
+
+        <!-- SCREEN 3 -->
+        <section class="scene" id="scene3">
+            <div class="glass-card">
+                <h2 class="title">✨<br>It's your special day <span class="highlight">Mr Saruuuu</span>! 🎉🎊</h2>
+                <button class="btn btn-yes" onclick="goToScene(4)" style="margin-top:22px;">Next 💕</button>
+            </div>
+        </section>
+
+        <!-- SCREEN 4 -->
+        <section class="scene" id="scene4">
+            <div class="glass-card">
+                <h2 class="title">🙈🫀<br>Do you want to see what I made for you? 🤔👀</h2>
+                <div style="margin-top:22px; position:relative; min-height:55px;">
+                    <button class="btn btn-yes" onclick="goToScene(5)">Yes 💕</button>
+                    <button class="btn btn-no" id="dodgingNoBtn" onmouseenter="dodgeButton()" ontouchstart="dodgeButton()" onclick="dodgeButton()">No 😏</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- SCREEN 5 -->
+        <section class="scene" id="scene5">
+            <div class="glass-card">
+                <h2 class="title">🤩<br>Okyy <span class="highlight">Mr Saruuuu</span> lets celebrate! 🥳😘🫀</h2>
+                <button class="btn btn-yes" onclick="goToScene(6)" style="margin-top:22px;">Start Celebration 🎉</button>
+            </div>
+        </section>
+
+        <!-- SCREEN 6 -->
+        <section class="scene" id="scene6">
+            <div class="glass-card">
+                <h2 class="title">💌 A Special Message For You</h2>
+                <div class="letter-envelope" id="letterEnvelope" onclick="openLetter()">💌</div>
+                <p class="letter-hint" id="letterHint">Click the letter to open ✨</p>
+                <div class="letter-content" id="letterContent">
+                    <p class="letter-text">
+                        My SAFE PLACE <span class="highlight">MR. Saruu🫀 </span>,<br><br>
+                    <pre class="message-pre">Happy birthdayyyy 🎂🥳
+Allah ap ki zindagi ko hamesha khushiyon se bhare or ap ko wo sab de jo
+ap dil se chahty ho 🤍
+
+I feel so lucky ky ap meri life mai ho 🫶
+Jab bhi mai overthinking krtii hoon ap mujhy sambhal lety ho.......🥺🫀
+Jab mai apna khayal nahi rakhtiiiii ap mujhse lar kar bhi mera khayal 
+rakhty ho....😭🤍Jab bhi zarurat hoti hai ap hamesha available hoty ho
+
+Ap ne us waqt bhi mujhy sambhala jab meri dost ne begair kuch kahe mujhse 
+aladgiii ikhytr ki thi 💔.....Ap hamesha bas mujhy sambhal lety ho....
+
+Ab mujhy lagta hai kuch bhi ho jaye ap ho to sab theek ho jayee ga...🤍
+Mai kitni bhi pareshan ho jaun mai seedha ap ke pass aungi or bolungi or
+sab theek ho jaye gaaaaa.......😭✨
+
+Thats why u are my safe place 🥺🫀
+I wishh ye sab hamesha aisa hi rahe ameen ameen ameen........🤍
+Ameen ameen ameen 🤍✨
+
+U are my safe place Mr saruu so I want to give u a name jo mere dil
+ke bohot qareeb hai
+
+Amari 🤍✨
+Amariii = "My Light in the Darkness🤍✨"🌙</pre>
+                    <br>
+                    <span style="color:#ff6b8a; font-weight:700; font-size:1.05rem;">— With all my heart ❤️</span>
+                    </p>
+                </div>
+                <button class="btn btn-yes" onclick="goToScene(7)" style="margin-top:18px;">Memorable Clips 🎬</button>
+            </div>
+        </section>
+
+        <!-- SCREEN 7 -->
+        <section class="scene" id="scene7">
+            <div class="glass-card">
+                <h2 class="title">🎬 Some Memorable Clips</h2>
+                <div class="video-grid" id="videoGrid"></div>
+                <button class="btn btn-yes" onclick="goToScene(8)" style="margin-top:14px;">Next 🔐</button>
+            </div>
+        </section>
+
+        <!-- SCREEN 8 -->
+        <section class="scene" id="scene8">
+            <div class="glass-card">
+                <h2 class="title">🔐 Secret Password</h2>
+                <p class="subtitle">Enter the secret name to unlock the final surprise...</p>
+                <input type="password" class="password-input" id="passwordInput" placeholder="Type here..." onkeydown="if(event.key==='Enter') checkPassword()">
+                <p class="hint-text">💡 Hint: That name you gave me Mr. Saru 😉</p>
+                <p id="passwordError" style="color:#ff6b8a; margin-top:8px; display:none; font-weight:600;">❌ Wrong! Try again...</p>
+                <button class="btn btn-yes" onclick="checkPassword()" style="margin-top:14px;">Unlock 🔓</button>
+            </div>
+        </section>
+
+        <!-- SCREEN 9 -->
+        <section class="scene" id="scene9">
+            <div class="glass-card">
+                <h2 class="title">🎁 You're the Best, <span class="highlight">Saruu</span>!</h2>
+                <p style="color:#ff6b8a; font-weight:700; font-size:1.1rem;">This whole effort is just a tiny glimpse of how much you mean to me.</p>
+                <pre class="poetry-pre">
+                    ​میرے دل کا سکون آپ کی آواز میں رہتا ہے۔
+                    وگرنہ دل میں چین کہاں کسی انداز میں رہتا ہے۔
+
+                    ​آپ کے زخموں، غموں کا سننا آسان نہیں ہوتا۔
+                    ان کا درد بھی میرے ساتھ ہر ایک پل میں رہتا ہے۔
+
+                    ​میں ناراضگی بھی آپ سے کہاں زیادہ دیر رکھتی
+                    آپ کا کان پکڑ کر ماننا میری یاد میں رہتا ہے۔
+
+                    ​اللہ آپ کی ہر خاموش دعا قبول کرے
+                    یہی خیال اکثر میرے دلِ نیاز میں رہتا ہے۔
+
+                    ​آپ کو وہ سب ملے جس کی تمنا ہو دل میں
+                    میری خواہشوں میں سب سے پہلے یہ ارمان رہتا ہے۔
+
+                    ​اگرچہ مجھ کو بھلا کر بھی آپ خوش رہتے
+                    پہ ایک خیال میرے دل میں بن کر اک راز رہتا ہے۔
+
+                    ​کسی نے پوچھا گر کبھی سکون کا دوسرا مطلب
+                    لفظ "آماری" ہمیشہ میرے جواب میں رہتا ہے۔
+                </pre>
+                <img src="final-bg.jpg" alt="Special" class="final-bg-image" onerror="this.style.display='none';">
+                <p class="subtitle" style="font-size:1.2rem; font-weight:700; color:#ff6b8a;">Always be Happy 💖🫂</p>
+                <button class="btn btn-yes" onclick="goToScene(1)" style="margin-top:16px;">Start Over 🔁</button>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- VIDEO MODAL -->
+    <div class="video-modal" id="videoModal">
+        <span class="close-modal" onclick="closeVideoModal()">✖</span>
+        <video id="modalVideo" controls autoplay></video>
+    </div>
+
+    <!-- AUDIO -->
+    <audio id="audio1" loop preload="auto"><source src="audio1.mp3" type="audio/mpeg"></audio>
+    <audio id="audio2" loop preload="auto"><source src="audio2.mp3" type="audio/mpeg"></audio>
+    <audio id="audio3" loop preload="auto"><source src="audio3.mp3" type="audio/mpeg"></audio>
+    <audio id="audio4" loop preload="auto"><source src="audio4.mp3" type="audio/mpeg"></audio>
+    <audio id="audio5" loop preload="auto"><source src="audio5.mp3" type="audio/mpeg"></audio>
+    <audio id="audio6" loop preload="auto"><source src="audio6.mp3" type="audio/mpeg"></audio>
+    <audio id="audio7" loop preload="auto"><source src="audio7.mp3" type="audio/mpeg"></audio>
+
+    <script>
+    function createGlitter(){const c=document.getElementById('glitterContainer');for(let i=0;i<8;i++){const g=document.createElement('div');g.className='glitter-spot';const sz=Math.random()*200+80;g.style.cssText=`width:${sz}px; height:${sz}px; left:${Math.random()*90}%; top:${Math.random()*90}%; --gs-dur:${Math.random()*4+3}s;`;c.appendChild(g);}}createGlitter();
+    function createStars(){const c=document.getElementById('starsContainer');for(let i=0;i<140;i++){const s=document.createElement('div');s.className='star-dot';s.style.cssText=`width:${Math.random()*2.5+1}px; height:${Math.random()*2.5+1}px; left:${Math.random()*100}%; top:${Math.random()*100}%; --tw-dur:${Math.random()*3+2}s; --tw-delay:${Math.random()*4}s; --glow:${Math.random()*5+2}px;`;c.appendChild(s);}}createStars();
+    function createBubbles(){const c=document.getElementById('bubblesLayer');const colors=['rgba(255,255,255,0.08)','rgba(255,200,220,0.1)','rgba(200,210,255,0.08)','rgba(255,180,200,0.1)','rgba(220,200,240,0.08)','rgba(255,220,230,0.1)'];for(let i=0;i<25;i++){const b=document.createElement('div');b.className='bubble';const sz=Math.random()*20+10;b.style.cssText=`width:${sz}px; height:${sz}px; left:${Math.random()*90}%; top:${Math.random()*88}%; --bu-dur:${Math.random()*5+5}s; --bu-delay:${Math.random()*3}s; --bu-x:0px; --bu-y:0px; --bu-d1:${Math.random()*30-15}px; --bu-d1y:${Math.random()*30-15}px; --bu-d2:${Math.random()*35-17}px; --bu-d2y:${Math.random()*35-17}px; --bu-color:${colors[Math.floor(Math.random()*colors.length)]};`;c.appendChild(b);}const flowers=['🌸','🌷','💐'];for(let i=0;i<3;i++){const f=document.createElement('span');f.className='flower';f.textContent=flowers[i];f.style.cssText=`left:${Math.random()*85}%; top:${Math.random()*85}%; --f-dur:${Math.random()*5+6}s; --f-delay:${Math.random()*3}s; --f-size:${Math.random()*0.6+1}rem; --f-x:0px; --f-y:0px; --f-drift:${Math.random()*20-10}px; --f-drifty:${Math.random()*20-10}px;`;c.appendChild(f);}}createBubbles();
+    function createSparkles(){const c=document.getElementById('sparklesLayer');const emojis=['✨','💫','⭐','🌟','💖','💕'];for(let i=0;i<30;i++){const sp=document.createElement('span');sp.className='sparkle-particle';sp.textContent=emojis[Math.floor(Math.random()*emojis.length)];sp.style.cssText=`left:${Math.random()*93}%; top:${Math.random()*90}%; --s-dur:${Math.random()*5+4}s; --s-delay:${Math.random()*3}s; --s-size:${Math.random()*0.8+0.6}rem; --s-opacity:${Math.random()*0.35+0.25}; --s-x:0px; --s-y:0px; --s-drift:${Math.random()*25-12}px; --s-drifty:${Math.random()*25-12}px;`;c.appendChild(sp);}}createSparkles();
+    function buildVideoGrid(){const grid=document.getElementById('videoGrid');grid.innerHTML='';for(let i=1;i<=6;i++){const block=document.createElement('div');block.className='video-block';block.onclick=function(){playVideo(i);};block.innerHTML=`<video muted loop preload="metadata"><source src="video${i}.mp4" type="video/mp4"></video><div class="play-overlay"><div class="play-circle">▶</div></div>`;grid.appendChild(block);}}buildVideoGrid();
+
+    let globalUnmuted=false,currentScene=1,currentAudioId=null,crossfadeTimer=null;
+    const sceneAudioMap={1:'audio1',2:'audio2',3:'audio3',4:'audio3',5:'audio3',6:'audio4',7:'audio5',8:'audio6',9:'audio7'};
+    const allAudioIds=['audio1','audio2','audio3','audio4','audio5','audio6','audio7'];
+
+    function toggleUnmute(){globalUnmuted=!globalUnmuted;const btn=document.getElementById('unmuteBtn');if(globalUnmuted){btn.textContent='🔊';btn.classList.remove('muted');const aid=sceneAudioMap[currentScene];if(aid)smoothSwitch(aid,600);showFunnyPopup('🔊 Music ON! 🎶💖');}else{btn.textContent='🔇';btn.classList.add('muted');pauseAllAudioInstant();showFunnyPopup('🔇 Music OFF');}}
+    function pauseAllAudioInstant(){allAudioIds.forEach(id=>{const a=document.getElementById(id);if(a){a.pause();a.currentTime=0;a.volume=0;}});currentAudioId=null;}
+    function goToScene(num){if(!globalUnmuted&&num>1){showFunnyPopup('🔇 Please unmute first! Tap 🔇 top-right! 🎵');return;}document.querySelectorAll('.scene').forEach(s=>s.classList.remove('active'));const t=document.getElementById('scene'+num);if(!t)return;t.classList.add('active');const prevScene=currentScene;currentScene=num;if(globalUnmuted){const prevAid=sceneAudioMap[prevScene];const newAid=sceneAudioMap[num];if(prevAid===newAid){const a=document.getElementById(newAid);if(a&&a.paused){a.volume=0.45;a.play().catch(()=>{});currentAudioId=newAid;}}else{smoothSwitch(newAid,700);}}if(num===4)resetDodgeButton();window.scrollTo({top:0,behavior:'smooth'});}
+    function smoothSwitch(newAid,dur=700){const na=document.getElementById(newAid);if(!na)return;if(crossfadeTimer)clearTimeout(crossfadeTimer);if(currentAudioId&&currentAudioId!==newAid){const oa=document.getElementById(currentAudioId);if(oa&&!oa.paused)fadeOutAndStop(oa,dur*0.6);}allAudioIds.forEach(id=>{if(id!==newAid&&id!==currentAudioId){const a=document.getElementById(id);if(a&&!a.paused){a.pause();a.currentTime=0;a.volume=0;}}});na.volume=0;na.currentTime=0;na.play().then(()=>{fadeIn(na,0.45,dur);currentAudioId=newAid;}).catch(()=>{setTimeout(()=>{na.play().then(()=>{fadeIn(na,0.45,dur);currentAudioId=newAid;}).catch(()=>{});},100);});}
+    function fadeOutAndStop(a,dur){const sv=a.volume,steps=20,iv=dur/steps,d=sv/steps;let s=0;function step(){if(s>=steps){a.pause();a.currentTime=0;a.volume=0;return;}a.volume=Math.max(0,sv-d*s);s++;crossfadeTimer=setTimeout(step,iv);}step();}
+    function fadeIn(a,tv,dur){const steps=25,iv=dur/steps,d=tv/steps;let s=0;function step(){if(s>=steps){a.volume=tv;return;}a.volume=Math.min(tv,d*s);s++;crossfadeTimer=setTimeout(step,iv);}step();}
+    function dodgeButton(){const btn=document.getElementById('dodgingNoBtn');const card=document.querySelector('#scene4 .glass-card');const r=card.getBoundingClientRect();btn.style.position='absolute';btn.style.left=Math.random()*Math.max(10,r.width-btn.offsetWidth-18)+'px';btn.style.top=Math.random()*Math.max(10,r.height-btn.offsetHeight-18)+'px';btn.style.transition='all 0.07s ease';showFunnyPopup('😂 Yes only! No ka button bhag gaya! Yes dabaao! 🤭');}
+    function resetDodgeButton(){const btn=document.getElementById('dodgingNoBtn');btn.style.position='relative';btn.style.left='auto';btn.style.top='auto';}
+    function showFunnyPopup(msg){document.querySelectorAll('.funny-popup').forEach(p=>p.remove());const p=document.createElement('div');p.className='funny-popup';p.textContent=msg;document.body.appendChild(p);setTimeout(()=>p.remove(),2400);}
+    let letterOpened=false;function openLetter(){if(letterOpened)return;letterOpened=true;document.getElementById('letterContent').classList.add('open');document.getElementById('letterEnvelope').textContent='📜';document.getElementById('letterEnvelope').style.animation='none';document.getElementById('letterHint').classList.add('hidden');}
+    let a5was=false;function playVideo(n){const modal=document.getElementById('videoModal');const mv=document.getElementById('modalVideo');mv.innerHTML='';const src=document.createElement('source');src.src='video'+n+'.mp4';src.type='video/mp4';mv.appendChild(src);mv.load();modal.classList.add('active');const a5=document.getElementById('audio5');if(a5&&!a5.paused){a5was=true;fadeOutAndStop(a5,200);}mv.play().catch(()=>{mv.muted=false;mv.play().catch(()=>{});});mv.onended=function(){closeVideoModal();};}
+    function closeVideoModal(){const modal=document.getElementById('videoModal');const mv=document.getElementById('modalVideo');mv.pause();mv.currentTime=0;mv.innerHTML='';modal.classList.remove('active');if(a5was&&globalUnmuted&&currentScene===7){const a5=document.getElementById('audio5');a5.volume=0;a5.currentTime=0;a5.play().then(()=>fadeIn(a5,0.45,400)).catch(()=>{});a5was=false;}}
+    document.addEventListener('keydown',function(e){if(e.key==='Escape')closeVideoModal();});
+    document.getElementById('videoModal').addEventListener('click',function(e){if(e.target===this)closeVideoModal();});
+    function checkPassword(){const inp=document.getElementById('passwordInput');if(inp.value.trim().toLowerCase()==='volcano'){document.getElementById('passwordError').style.display='none';inp.classList.remove('shake');showFunnyPopup('✅ Correct! Volcano unlocked! 🌋💖');setTimeout(()=>goToScene(9),800);}else{document.getElementById('passwordError').style.display='block';inp.classList.add('shake');inp.value='';inp.focus();setTimeout(()=>inp.classList.remove('shake'),500);}}
+    document.getElementById('audio1').load();document.getElementById('audio1').volume=0;
+    document.addEventListener('visibilitychange',()=>{if(document.hidden){if(currentAudioId){const a=document.getElementById(currentAudioId);if(a&&!a.paused)a.pause();}}else{if(currentAudioId&&globalUnmuted&&currentScene!==7){const a=document.getElementById(currentAudioId);if(a&&a.paused)a.play().catch(()=>{});}}});
+    console.log('🎂✨ Happy Birthday Saruu! 💙💖');
+</script>
+</body>
+</html>
